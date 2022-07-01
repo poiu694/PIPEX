@@ -6,7 +6,7 @@
 /*   By: sangmlee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 13:02:02 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/07/01 14:42:35 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:58:14 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	init_node(t_node *node, char *file, char *cmd, char **envp)
 	paths = find_path(envp);
 	node->file = file;
 	node->exec_argv_cmd = ft_split(cmd, ' ');
-	node->exec_file_path = get_cmd_path(cmd, paths);
+	node->exec_file_path = get_cmd_path(node->exec_argv_cmd[0], paths);
 	free_array(paths);
 }
 
